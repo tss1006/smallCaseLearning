@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 类继承
+        // class Animal{
+        //     constructor(name){
+        //          this.name=name;
+        //     } 
+        //     say(){
+        //         return `This is a animal`;
+        //     }   
+        // }
+
+        // class Dog extends Animal{
+        //    constructor(name,color){
+        //        super(name);
+        //        this.color=color;
+        //    }
+        //    getAttritube(){
+        //        return `$(super.say()),
+        //        name:$(this.name),
+        //        color:$(this.color)`;
+        //    }
+        // }    
+        // let d=new Dog("dog","black");
+        // console.log(d.getAttritube());
+
+        // 数组去重
+        // function remDuplicate(arr){
+        //     var temp=[];
+        //     arr.forEach(element => {
+        //         if(temp.indexOf(element)===-1){
+        //             temp.push(element);
+        //         }
+        //     });
+        //     return temp;
+        // }
+
+        // function remDuplicate(arr){
+        //     // return [...new Set(arr)];
+        //     return Array.from(new Set(arr));
+        // }
+        // console.log(remDuplicate([1,2,4,4,5,3,2,1]))
+
+        // 归并排序
+        // function merge(left, right) {
+        //     var res = [];
+        //     while (left.length > 0 && right.length > 0) {
+        //         if (left[0] < right[0]) {
+        //             res.push(left.shift());
+        //         } else {
+        //             res.push(right.shift());
+        //         }
+        //     }
+        //     return res.concat(left, right);
+        // }
+        // function mergeSort(arr) {
+        //     if (arr.length === 1) {
+        //         return arr;
+        //     }
+        //     var mid = parseInt(arr.length / 2);
+        //     var left = [].concat(arr.slice(0, mid));
+        //     var right = [].concat(arr.slice(mid));
+        //     return merge(mergeSort(left), mergeSort(right));
+        // }
+        // var arr = [12, 20, 30, 21, 15];
+        // console.log(mergeSort(arr));
+
+        // 快排
+        // function quickSort(arr) {
+        //     if (arr.length === 1) {
+        //         return arr;
+        //     }
+        //         var baseIndex = parseInt(arr.length / 2);
+        //         var baseArray=arr.splice(baseIndex, 1);
+        //         var base = baseArray[0];
+        //         var left=[];
+        //         var right=[];
+        //     for (var i = 0; i < arr.length; i++) {
+        //         if(arr[i]>base){
+        //            right.push(arr[i]);
+        //         }else{
+        //             left.push(arr[i])
+        //         }
+        //     }
+        //     return quickSort(left).concat(baseArray,quickSort(right));
+        // }
+        // console.log(quickSort([3, 4, 2, 1, 6]));
+
+        // 移动端click事件封装
+        // function tap(dom,callback){
+        //     // 不能超过延时时间 不能移动
+        //     var startTime=0;
+        //     var endTime=0;
+        //     var isMove=false;
+        //     dom.addEventListener('touchstart',function(e){
+        //        startTime=Date.now();
+        //     });
+
+        //     dom.addEventListener('touchmove',function(e){
+        //         isMove=true;
+        //     })
+
+        //     dom.addEventListener('touchend',function(e){
+        //        endTime=Date.now();
+        //        if(isMove)return;
+        //        if(endTime-startTime>300)return;
+        //        callback();
+        //     })
+        // }
+
+        // 手写debouce函数
+        // function debounce(fn,delay){
+        //     var timer=null;
+        //     return function(){
+        //         clearTimeout(timer);
+        //         timer=setTimeout(fn,delay);
+        //     }
+        // }
+
+        // 手写ajax
+        // function ajax(url) {
+        //     return new Promise((resolve, reject) => {
+        //         var xhr = new XMLHttpRequest();
+        //         xhr.open('GET', url);
+        //         xhr.send();
+        //         xhr.onreadystatechange = function () {
+        //             if (xhr.status == 200 && xhr.readyStates == 4) {
+        //                 ;
+        //                 resolve(xhr.responseText);
+        //             } else {
+        //                 reject(xhr.status);
+        //             }
+        //         }
+        //     });
+        // }
+
+         // 手写once函数，传入函数参数只执行一次（闭包）
+        // function test() { console.log('test') }
+        // var once = function (fn) {
+        //     var isFirst = true;
+        //     return function () {
+        //         if (isFirst) {
+        //             isFirst = !isFirst;
+        //             fn();
+        //         }
+        //     };
+        // };
+        // var b = once(test);
+        // console.log(b()); // 'test'
+        // b(); // nothing
+
+        // 任何进制转10进制
+        // var num=parseInt(110,2); //6
+        // // 十进制转任何进制  转7进制
+        // var res=Number(num.toString(7));
+
+        // var showName = function (person) {
+        //     document.write(person.name);
+        //     alert(person);
+        // };
+
+        // var script = document.createElement("script");
+        // script.type = "text/javascript";
+        // script.src = "http://10.0.4.226:8080/ServerApp/dataserv.do?callback=showName";
+        // document.getElementsByTagName('head')[0].appendChild(script);
+
+        // 数组拍平
+         // function flatten(arr) {
+        //     return arr.reduce((pre, cur) => {
+        //         if (Array.isArray(cur)) {
+        //             return [...pre, ...flatten(cur)]
+        //         } else {
+        //             return [...pre, cur];
+        //         }
+        //     }, [])
+        // }
+
+
+        // padding值不能为负
+
+        // 自适应正方形
+        // .son{
+        //     width: 20%;
+        //     height: 20vw;
+        //     background-color: red;
+        // }
+
+        // 打乱数组顺序
+        // arr.sort(()=>0.5-Math.random());
+
+        // 函数节流
+        //  function throttle(fn, delay) {
+        //     let isExecute = false
+        //     return function () {
+        //         if (isExecute) return
+        //         isExecute = true
+        //         setTimeout(() => {
+        //             fn();
+        //             isExecute = false;
+        //         }, delay)
+        //     }
+        // }
+   
+        // function throttle(fn, delay) {
+        //     let lastTime = new Date().getTime()
+        //     let currentTime
+        //     return function () {
+        //         currentTime = new Date().getTime()
+        //         if (currentTime - lastTime < delay) return
+        //         lastTime = currentTime
+        //         fn()
+        //     }
+        // }
+
+        // 驼峰规则转换
+        //fontSize=>font-size
+        // s.replace(/([A-Z])/g,function(all,ele){return "-"+ele.toLowerCase()});
+        // font-size=>fontSize
+        // s.replace(/-(\w)/g,function(all,ele){return ele.toUpperCase()});
+
+    </script>
+</body>
+</html>
